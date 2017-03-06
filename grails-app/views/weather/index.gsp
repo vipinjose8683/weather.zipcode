@@ -34,9 +34,9 @@
 				<g:each in="${weatherInstanceList}" status="i" var="weatherInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${weatherInstance.id}">${fieldValue(bean: weatherInstance, field: "temperature")}</g:link></td>
+						<td><g:link action="show" id="${weatherInstance.id}">${fieldValue(bean: weatherInstance, field: "zipCode")}</g:link></td>
 					
-						<td>${fieldValue(bean: weatherInstance, field: "zipCode")}</td>
+						<td>${fieldValue(bean: weatherInstance, field: "temperature")}</td>
 					
 					</tr>
 				</g:each>

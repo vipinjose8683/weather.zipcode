@@ -7,7 +7,7 @@ class UrlMappings {
             }
         }
 
-        "/"(view:"/index")
+        "/"(controller:'Weather', action:'index')
         "500"(view:'/error')
 	}
 }

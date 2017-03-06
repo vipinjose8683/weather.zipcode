@@ -7,5 +7,8 @@ class Weather {
 	Integer temperature
 
     static constraints = {
+		zipCode nullable: true
+		temperature nullable: true
     }
+	
 }
