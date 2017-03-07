@@ -5,8 +5,6 @@ import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
 class WeatherController {
-
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 	
 	def weatherService
 	
@@ -26,11 +24,13 @@ class WeatherController {
             return
 		}
 		def weatherInstance = Weather.findByZipCode(params.myField)
+		weatherInstance = weatherService.getUpdatedInfo(weatherInstance);
 		println weatherInstance
         if (weatherInstance == null) {
             notFound()
             return
         }
+		weatherInstance.save()
         redirect action: "show", id: weatherInstance.id
     }
 

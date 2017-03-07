@@ -18,6 +18,9 @@
 		</div>
       <div class="weatherZipCode">
 			<h1>
+				<g:if test="${weatherInstance?.name}">
+					<g:fieldValue bean="${weatherInstance}" field="name"/>, 
+				</g:if>
 				<g:if test="${weatherInstance?.zipCode}">
 					<g:fieldValue bean="${weatherInstance}" field="zipCode"/>
 				</g:if>

@@ -3,6 +3,7 @@ package com.weather.zipcode
 class Weather {
 
 	String zipCode
+	String name
 	String temperature
 	String iconUrl
 	String description
@@ -12,6 +13,7 @@ class Weather {
 	
     static constraints = {
 		zipCode nullable: true, unique: true
+		name nullable: true
 		temperature nullable: true
 		iconUrl nullable: true
 		description nullable: true
