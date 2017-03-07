@@ -17,6 +17,7 @@ class WeatherService {
 			WeatherResponse response = weatherResource.findByZipCode(weatherInstance.zipCode)
 			println response.name
 			weatherInstance = weatherResponseTransformer.populate(response, weatherInstance)
+			println weatherInstance.iconUrl
 		}
 		println "in weather service"
 		return weatherInstance

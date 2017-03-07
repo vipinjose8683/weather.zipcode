@@ -9,7 +9,7 @@ class WeatherResponseTransformer {
     def populate(WeatherResponse weatherResponse, Weather weather) {
 		if (weatherResponse != null) {
 			weather.name = weatherResponse.name
-			weather.temperature = weatherResponse.main.temp
+			weather.temperature = weatherResponse.main.temp - 272.15
 			weather.iconUrl = "http://openweathermap.org/img/w/" + weatherResponse.weather.icon + ".png"
 			weather.description = weatherResponse.weather.description
 			weather.humidity = weatherResponse.main.humidity

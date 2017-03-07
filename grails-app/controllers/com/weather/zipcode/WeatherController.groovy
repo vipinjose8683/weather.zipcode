@@ -25,12 +25,12 @@ class WeatherController {
 		}
 		def weatherInstance = Weather.findByZipCode(params.myField)
 		weatherInstance = weatherService.getUpdatedInfo(weatherInstance);
-		println weatherInstance
+		println weatherInstance.name
         if (weatherInstance == null) {
             notFound()
             return
         }
-		weatherInstance.save()
+		weatherInstance.save flush: true, failOnError: true
         redirect action: "show", id: weatherInstance.id
     }
 
