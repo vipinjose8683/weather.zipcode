@@ -21,7 +21,6 @@ class WeatherController {
     def search() {
 		def searchZipCode = params.myField
 		println searchZipCode
-		println searchZipCode.matches("[0-9]+")
 		if (!searchZipCode.matches("\\d{5}")) {
             invalidZipCode()
             return

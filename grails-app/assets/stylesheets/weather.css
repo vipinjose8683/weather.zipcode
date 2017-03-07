@@ -1,0 +1,10 @@
+.weatherZipCode {
+	text-align: center;
+    color: blue;
+}
+
+div.weatherProperty {
+	text-align: center;
+    height: 300px;
+    background-color: rgb(250,250,250);
+}
