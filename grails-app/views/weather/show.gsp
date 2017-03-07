@@ -16,10 +16,6 @@
 				Zip Code : <g:textField name="myField"/><g:actionSubmit value="${message(code: 'weather.label.show', default: 'Show Weather')}" action="search"/>
 			</g:form>
 		</div>
-		<div id="show-weather" class="content scaffold-show" role="main">
-			<ol class="property-list weather">
-			</ol>
-		</div>
       <div class="weatherZipCode">
 			<h1>
 				<g:if test="${weatherInstance?.zipCode}">
@@ -38,40 +34,43 @@
           <div class="item active">
 			<div class="weatherProperty">
 				<g:if test="${weatherInstance?.iconUrl}">
-				<li class="fieldcontain">
-					<span id="temperature-label" class="property-label"><g:message code="weather.temperature.label" default="Weather" /></span>
-					<span class="property-value" aria-labelledby="temperature-label"><img src="<g:fieldValue bean="${weatherInstance}" field="iconUrl"/>" alt="Grails"/></span>
-				</li>
+					<div class="weatherKey"><g:message code="weather.temperature.label" default="Weather" /></div>
+					<div class="weatherIconValue"><img src="<g:fieldValue bean="${weatherInstance}" field="iconUrl"/>" alt="WeatherImage"/></div>
+					<div class="weatherIconDesc"><g:fieldValue bean="${weatherInstance}" field="description"/></div>
 				</g:if>
 			</div>
           </div>
           <div class="item">
 			<div class="weatherProperty">
 				<g:if test="${weatherInstance?.temperature}">
-				<li class="fieldcontain">
-					<span id="temperature-label" class="property-label"><g:message code="weather.temperature.label" default="Temperature" /></span>
-					<span class="property-value" aria-labelledby="temperature-label"><g:fieldValue bean="${weatherInstance}" field="temperature"/></span>
-				</li>
+					<div class="weatherKey"><g:message code="weather.temperature.label" default="Temperature" /></div>
+					<div class="weatherValue">
+						<g:fieldValue bean="${weatherInstance}" field="temperature"/>
+						<span class="weatherValueUnit">C</span>
+					</div>
 				</g:if>
 			</div>
           </div>
           <div class="item">
 			<div class="weatherProperty">
 				<g:if test="${weatherInstance?.humidity}">
-				<li class="fieldcontain">
-					<span id="temperature-label" class="property-label"><g:message code="weather.temperature.label" default="Humidity" /></span>
-					<span class="property-value" aria-labelledby="temperature-label"><g:fieldValue bean="${weatherInstance}" field="humidity"/></span>
-				</li>
+					<div class="weatherKey"><g:message code="weather.temperature.label" default="Humidity" /></div>
+					<div class="weatherValue">
+						<g:fieldValue bean="${weatherInstance}" field="humidity"/>
+						<span class="weatherValueUnit">%</span>
+					</div>
 				</g:if>
 			</div>
           </div>
           <div class="item">
 			<div class="weatherProperty">
 				<g:if test="${weatherInstance?.windSpeed}">
-				<li class="fieldcontain">
-					<span id="temperature-label" class="property-label"><g:message code="weather.temperature.label" default="Wind Speed" /></span>
-					<span class="property-value" aria-labelledby="temperature-label"><g:fieldValue bean="${weatherInstance}" field="windSpeed"/></span>
-				</li>
+					<div class="weatherKey"><g:message code="weather.temperature.label" default="Wind Speed" /></div>
+					<div class="weatherValue">
+						<g:fieldValue bean="${weatherInstance}" field="windSpeed"/>
+						<span class="weatherValueUnit">mph</span>
+					</div>
+					
 				</g:if>
 			</div>
           </div>
