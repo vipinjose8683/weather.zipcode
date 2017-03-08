@@ -9,6 +9,7 @@ class Weather {
 	String description
 	String humidity
 	String windSpeed
+	String direction
 	Date lastUpdated 
 	
     static constraints = {
@@ -19,6 +20,7 @@ class Weather {
 		description nullable: true
 		humidity nullable: true
 		windSpeed nullable: true
+		direction nullable: true
     }
 	
 }

@@ -13,13 +13,8 @@ class WeatherService {
 	def weatherResponseTransformer = new WeatherResponseTransformer()
 
     def getUpdatedInfo(Weather weatherInstance) {
-		if (weatherInstance != null) {
-			WeatherResponse response = weatherResource.findByZipCode(weatherInstance.zipCode)
-			println response.name
-			weatherInstance = weatherResponseTransformer.populate(response, weatherInstance)
-			println weatherInstance.iconUrl
-		}
-		println "in weather service"
+		WeatherResponse response = weatherResource.findByZipCode(weatherInstance.zipCode)
+		weatherInstance = weatherResponseTransformer.populate(response, weatherInstance)
 		return weatherInstance
     }
 }

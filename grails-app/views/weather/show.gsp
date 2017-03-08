@@ -39,7 +39,7 @@
 				<g:if test="${weatherInstance?.iconUrl}">
 					<div class="weatherKey"><g:message code="weather.temperature.label" default="Weather" /></div>
 					<div class="weatherIconValue"><img src="<g:fieldValue bean="${weatherInstance}" field="iconUrl"/>" alt="WeatherImage"/></div>
-					<div class="weatherIconDesc"><g:fieldValue bean="${weatherInstance}" field="description"/></div>
+					<div class="weatherValueSub"><g:fieldValue bean="${weatherInstance}" field="description"/></div>
 				</g:if>
 			</div>
           </div>
@@ -73,7 +73,7 @@
 						<g:fieldValue bean="${weatherInstance}" field="windSpeed"/>
 						<span class="weatherValueUnit">mph</span>
 					</div>
-					
+					<div class="weatherValueSub"><g:fieldValue bean="${weatherInstance}" field="direction"/></div>
 				</g:if>
 			</div>
           </div>
